@@ -168,7 +168,7 @@ $(function () {
 
             let tituloGrupo= $(".manipulando").siblings('.header-grupo').text();
 
-            let idxGrupo = listaLocal[idx].grupos.findIndex( gp => gp.nome == tituloGrupo.substring(1, tituloPai.length));
+            let idxGrupo = listaLocal[idx].grupos.findIndex( gp => gp.nome == tituloGrupo.substring(1, tituloGrupo.length));
 
             let desc = $("#descricaoUrl").val();
 
