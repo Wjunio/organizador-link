@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Organizar Links</title>
+    <link rel="stylesheet" href="./assets/css/jquery-ui-1.13.2/jquery-ui.css">
+    <link rel="stylesheet" href="./assets/css/scroll.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/input-file.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/star.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/js/jquery-3.6.0.js"></script>
+    <script src="./assets/js/ui_1.13.2_jquery-ui.js"></script>
+    <script src="./assets/js/montarTelaJson.js"></script>
+    <script src="./assets/js/FileSaver.js"></script>
+    <script src="./assets/js/gravaArquivoJSON.js"></script>
+    <script src="./assets/js/manter.js"></script>
+    <script src="./assets/js/sortable.js"></script>
+    <script src="./assets/js/accordion.js"></script>
+    <script src="./assets/js/carregarLista.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <span class="box-nav">
+            <label class="input-file" for="fileInput" title="Carregar JSON Atualizado">Atualizar</label>
+            <input type="file" id="fileInput" onchange="carregarJSON()">
+        </span>
+        <section class="posicao-button-externo">
+            <button class="btn" title="Adicionar novo divisor"> + </button>
+        </section>
+    </nav>
+
+    <section id="sortable">
+    </section>
+
+    <footer>
+        <button class="ui-button ui-widget ui-corner-all" id="upateJson">Salvar</button>
+    </footer>
+    
+    <div class="mask" role="dialog"></div>
+    <div class="modal" role="alert">
+        <a class="close" role="button">+</a>
+
+        <section id="externo">
+            <h3>Divisor</h3>
+
+            <div class="body-modal">
+                <label>Apresentar Número Gis: <input id="isNumeroGis" type="checkbox" id="open" onclick='handleGis(this);'></label>
+                <label>Número GIS: <input id="numGis" class="input" placeholder="Número GIS" disabled="true"/></label>                
+                <label>Manter Aberto: <input id="manterOpen" type="checkbox" id="open"></label>
+                <label>Titulo Divisor:</label>
+                <input id="tituloDivisor" class="input" placeholder="Titulo"/>
+            </div>
+
+            <button class="btn-add btn-externo">Adicionar</button>
+        </section>
+
+        <section id="agrupador">
+            <h3>Agrupador</h3>
+
+            <div class="body-modal">
+
+                <label>Titulo Agrupador:</label>
+                <input id="tituloAgrupador" class="input" placeholder="Titulo Agrupador"/>
+
+            </div>
+
+            <button class="btn-add">Salvar</button>
+        </section>
+
+        <section id="interno">
+            <h3>Link</h3>
+
+            <div class="body-modal">
+
+                <label>Descrição URL:</label>
+                <input id="descricaoUrl" class="input" placeholder="Descrição URL"/>
+
+                <label>Link:</label>
+                <input id="link" class="input" placeholder="URL"/>
+
+            </div>
+
+            <button class="btn-add btn-interno">Salvar</button>
+        </section>
+    </div>
+
+    <div id="dialog-confirm" title="Deseja Realmente excluir?">
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
+            Esse processo ira apenas excluir do localStorage!
+        </p>
+    </div>
+
+</body>
+
+</html>

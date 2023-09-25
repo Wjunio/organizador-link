@@ -1,0 +1,26 @@
+.star-container {
+    width: 32px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.star-check {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+    -ms-appearance: none !important;
+    appearance: none !important;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/star.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right 0;
+    cursor: pointer;
+    outline: 0;
+}
+    .star-check:checked,
+    .star-check:checked~input {
+        background-position: left 0;
+    }
